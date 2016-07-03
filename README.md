@@ -1,7 +1,8 @@
 ## What is it? 
-"Soundscape of Portrait", an art work by [Ayumu Nagamatsu](http://ayumu-nagamatsu.com)
+"Soundscape of Portrait", an art work by [Ayumu Nagamatsu](http://ayumu-nagamatsu.com).
 This was created with [openFrameworks](http://openframeworks.cc/).
-Please, check description of this project.
+Please check [here](http://ayumu-nagamatsu.com/works/soundscape-of-portrait/) description of this project.
+Demo is [here](https://www.youtube.com/watch?v=lBDve2U6rbk).
 
 ## Technical Infomation
 * Xcode 7.3.1
