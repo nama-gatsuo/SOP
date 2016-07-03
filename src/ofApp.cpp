@@ -10,17 +10,17 @@ void ofApp::setup(){
     
     receiver.setup(port);
     
-//    dmxOn[0] = 255;  dmxOn[1] = 255;  dmxOn[2] = 255;  dmxOn[3] = 0;
-//    dmxOff[0] = 255; dmxOff[1] = 0; dmxOff[2] = 0; dmxOff[3] = 0;
-//    
-//    for (int i = 4; i < 512; i++) {
-//    
-//        dmxOn[i] = 0;
-//        dmxOff[i] = 0;
-//    
-//    }
+    dmxOn[0] = 255;  dmxOn[1] = 255;  dmxOn[2] = 255;  dmxOn[3] = 0;
+    dmxOff[0] = 255; dmxOff[1] = 0; dmxOff[2] = 0; dmxOff[3] = 0;
     
-//    artnet.setup("127.0.0.1");
+    for (int i = 4; i < 512; i++) {
+    
+        dmxOn[i] = 0;
+        dmxOff[i] = 0;
+    
+    }
+    
+    artnet.setup("127.0.0.1");
 //    artnet.setup("192.168.1.184");
     
     sender.setup("127.0.0.1", 7400);
@@ -61,7 +61,7 @@ void ofApp::update(){
                         
                     case 36: ground.triggerKick(); break;
                     case 39: grass.trigger(); break;
-//                    case 40: artnet.sendDmx("127.0.0.1", 0x0, 0x0, dmxOn, 512); bDmxOn = true; break;
+                    case 40: artnet.sendDmx("127.0.0.1", 0x0, 0x0, dmxOn, 512); bDmxOn = true; break;
 //                    case 40: artnet.sendDmx("192.168.1.75",dmxOn, 512); bDmxOn = true; break;
                     case 42: tree.trigger(); break;
                     case 49: {
@@ -85,7 +85,7 @@ void ofApp::update(){
     
     if (bDmxOn) {
 //        artnet.sendDmx("192.168.1.75", 0x0, 0x0, dmxOff, 512);
-//        artnet.sendDmx("127.0.0.1", dmxOff, 512);
+        artnet.sendDmx("127.0.0.1", dmxOff, 512);
         
         dmxState -= 1;
         sendDmx(dmxState);

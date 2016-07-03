@@ -48,14 +48,14 @@ class ofApp : public ofBaseApp{
     
     CameraMan cam;
     
-//    ofxArtnet artnet;
+    ofxArtnet artnet;
     ofxOscReceiver receiver;
     ofxOscSender sender;
     
     const int port = 7401;
     
-//    unsigned char dmxOn[512];
-//    unsigned char dmxOff[512];
+    unsigned char dmxOn[512];
+    unsigned char dmxOff[512];
     int dmxState = 0;
     bool bDmxOn = false;
     
